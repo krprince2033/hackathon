@@ -67,6 +67,7 @@ public class ApplicationController {
                 .map(application -> {
                     application.setSelected(true);
                     application.setSelectedAt(LocalDateTime.now());
+                    application.setHrScheduled(LocalDateTime.now());
                     Application updated = applicationRepository.save(application);
                     return ResponseEntity.ok(updated);
                 })

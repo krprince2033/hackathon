@@ -45,6 +45,12 @@ public class Application {
     @Builder.Default
     private Boolean emailSent48Hrs = false;
 
+    private LocalDateTime hrScheduled;
+
+    private LocalDateTime smsSentTime;
+
+    private LocalDateTime emailSentTime;
+
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;

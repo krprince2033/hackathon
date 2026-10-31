@@ -24,7 +24,7 @@ public class NotificationService {
             var response = smsService.sendSms(application, message);
 
             if (response.success()) {
-                int updated = applicationRepository.markSmsAsSent(application.getId());
+                int updated = applicationRepository.markSmsAsSent(application.getId(), java.time.LocalDateTime.now());
                 if (updated > 0) {
                     log.info("SMS flag updated to true for application ID: {}", application.getId());
                     return true;
@@ -50,7 +50,7 @@ public class NotificationService {
             var response = emailService.sendEmail(application, subject, message);
 
             if (response.success()) {
-                int updated = applicationRepository.markEmail24HrsAsSent(application.getId());
+                int updated = applicationRepository.markEmail24HrsAsSent(application.getId(), java.time.LocalDateTime.now());
                 if (updated > 0) {
                     log.info("24-hour email flag updated to true for application ID: {}", application.getId());
                     return true;
@@ -76,7 +76,7 @@ public class NotificationService {
             var response = emailService.sendEmail(application, subject, message);
 
             if (response.success()) {
-                int updated = applicationRepository.markEmail48HrsAsSent(application.getId());
+                int updated = applicationRepository.markEmail48HrsAsSent(application.getId(), java.time.LocalDateTime.now());
                 if (updated > 0) {
                     log.info("48-hour email flag updated to true for application ID: {}", application.getId());
                     return true;
