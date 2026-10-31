@@ -49,7 +49,9 @@ public class Application {
 
     private LocalDateTime smsSentTime;
 
-    private LocalDateTime emailSentTime;
+    private LocalDateTime emailSent24HrsTime;
+
+    private LocalDateTime emailSent48HrsTime;
 
     private LocalDateTime createdAt;
 

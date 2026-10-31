@@ -78,7 +78,7 @@ public class NotificationScheduler {
     }
 
     private void process48HrEmailNotifications() {
-        LocalDateTime cutoffTime = LocalDateTime.now().minusHours(48);
+        LocalDateTime cutoffTime = LocalDateTime.now().minusHours(24);
         List<Application> pending48HrEmail = applicationRepository.findPending48HrEmailNotifications(cutoffTime);
         log.info("Found {} applications pending 48-hour email notification", pending48HrEmail.size());
 
